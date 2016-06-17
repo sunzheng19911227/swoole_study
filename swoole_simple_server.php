@@ -21,6 +21,7 @@ class Server
         echo "Start\n";
     }
     public function onConnect( $serv, $fd, $from_id ) {
+        echo "Connect {$fd}";
         $serv->send( $fd, "Hello {$fd}!" );
     }
     public function onReceive( swoole_server $serv, $fd, $from_id, $data ) {
